@@ -16,11 +16,21 @@ namespace OpcUaClientV1
             // Prepare log file
             try
             {
-                Global.logFile = new LogFile(Global.initTimeStamp.ToString().Replace("/", "-").Replace(" ", "_").Replace(":", "-") + "_log");
+                Global.logFile = new TextFile(Global.initTimeStamp.ToString().Replace("/", "-").Replace(" ", "_").Replace(":", "-") + "_log");
             }
             catch (Exception exc)
             {
                 Global.ConsoleException("Error preparing log file!", exc.Message);
+            }
+            // Prepare csv file
+            try
+            {
+                Global.csvFile = new TextFile(Global.initTimeStamp.ToString().Replace("/", "-").Replace(" ", "_").Replace(":", "-") + "_csv");
+                Global.csvFile.WriteLineOnlyFile("Time Stamp,Node ID,Value");
+            }
+            catch (Exception exc)
+            {
+                Global.ConsoleException("Error preparing csv file!", exc.Message);
             }
             // Read XML Config file
             try

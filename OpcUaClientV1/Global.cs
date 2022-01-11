@@ -9,8 +9,8 @@ namespace OpcUaClientV1
     internal static class Global
     {
         public static DateTime initTimeStamp;
-        public static LogFile logFile;
-        public static ConfigParams configParams = new ConfigParams();
+        public static TextFile logFile, csvFile;
+        public static ConfigParams configParams;
         public static void ConsoleException(string title, string body)
         {
             Console.WriteLine();

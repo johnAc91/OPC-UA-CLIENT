@@ -82,6 +82,7 @@ namespace OpcUaClientV1
             readNodes(readXmlDocument());
             Global.logFile.WriteLine("XML Config file read!");
             Global.logFile.WriteLine(null);
+            Global.logFile.WriteLine(null);
         }
     }
 }

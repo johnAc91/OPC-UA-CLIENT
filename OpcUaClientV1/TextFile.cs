@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OpcUaClientV1
 {
-    internal class LogFile
+    internal class TextFile
     {
         private string path;
         public string Path
@@ -31,15 +31,28 @@ namespace OpcUaClientV1
             logFile.Close();
             Console.Write(data);
         }
-        public LogFile(string fileName)
+        public void WriteLineOnlyFile(string data)
         {
-            Console.WriteLine("Preparing log file ...");
+            StreamWriter logFile = new System.IO.StreamWriter(path, true);
+            logFile.WriteLine(data);
+            logFile.Close();
+        }
+        public void WriteOnlyFile(string data)
+        {
+            StreamWriter logFile = new System.IO.StreamWriter(path, true);
+            logFile.Write(data);
+            logFile.Close();
+        }
+        public TextFile(string fileName)
+        {
+            Console.WriteLine("Preparing " + fileName + " file ...");
             Console.WriteLine("");
-            Console.WriteLine("    Log file name:                   " + fileName);
+            Console.WriteLine("    File name:                       " + fileName);
             Console.WriteLine();
             path = Environment.CurrentDirectory + "\\" + fileName;
-            WriteLine("Log file ready!");
-            WriteLine(null);
+            Console.WriteLine(fileName + " ready!");
+            Console.WriteLine();
+            Console.WriteLine();
         }
     }
 }

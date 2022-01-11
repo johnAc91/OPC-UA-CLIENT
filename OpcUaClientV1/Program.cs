@@ -10,6 +10,7 @@ namespace OpcUaClientV1
     {
         static void Main(string[] args)
         {
+
         }
     }
 }

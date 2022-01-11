@@ -1,5 +1,3 @@
-Log file ready!
-
 Reading XML Config file ...
 
     File name:                 OpcUaClientV1_Config.xml
@@ -13,4 +11,5 @@ Reading XML Config file ...
                                ns=4;i=2033800
                                
 XML Config file read!
+
 

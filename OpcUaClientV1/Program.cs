@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Opc.Ua;
+using Opc.Ua.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +12,7 @@ namespace OpcUaClientV1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hi!");
+            ConfigFile configFile = new ConfigFile();
             Console.ReadKey();
         }
     }

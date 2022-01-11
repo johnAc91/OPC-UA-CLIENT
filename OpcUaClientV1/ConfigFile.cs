@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +10,7 @@ namespace OpcUaClientV1
 {
     internal class ConfigFile
     {
-        private string serverUrl;
-        private int publishingInterval;
-        private int samplingInterval;
-        private int maxQueueSize;
-        private bool endPointSecurity;
+        private ConfigParams configurationParameters = new ConfigParams();
         private dynamic readNode(XmlDocument xmlDocument, string xmlNodeDirection)
         {
             XmlNode xmlNode = xmlDocument.SelectSingleNode(xmlNodeDirection);
@@ -38,69 +35,53 @@ namespace OpcUaClientV1
                 }
             }
         }
-        private string[] readNodesList(XmlDocument xmlDocument, string xmlNodeListDirection)
+        private ArrayList readNodesList(XmlDocument xmlDocument, string xmlNodeListDirection)
         {
             XmlNodeList xmlNodeList = xmlDocument.SelectNodes(xmlNodeListDirection);
-            string[] nodesList = new string[xmlNodeList.Count];
-            Console.Write("    Nodes:                     ");
+            ArrayList nodesList = new ArrayList();
+            Global.logFile.Write("    Nodes:                     ");
             for (int i = 0; i < xmlNodeList.Count; i++)
             {
-                nodesList[i] = xmlNodeList.Item(i).InnerText;
-                Console.WriteLine(nodesList[i]);
-                Console.Write("                               ");
+                nodesList.Add(xmlNodeList.Item(i).InnerText);
+                Global.logFile.WriteLine(nodesList[i].ToString());
+                Global.logFile.Write("                               ");
             }
-            Console.WriteLine();
+            Global.logFile.WriteLine(null);
             return nodesList;
         }
         private void readNodes(XmlDocument xmlDocument)
         {
-            serverUrl = readNode(xmlDocument, "config/opcuaServer/url");
-            Console.WriteLine("    Server url:                " + serverUrl);
-            publishingInterval = readNode(xmlDocument, "config/opcuaServer/publishingInterval");
-            Console.WriteLine("    Publishing interval:       " + publishingInterval);
-            samplingInterval = readNode(xmlDocument, "config/opcuaServer/samplingInterval");
-            Console.WriteLine("    Sampling interval:         " + samplingInterval);
-            maxQueueSize = readNode(xmlDocument, "config/opcuaServer/maxQueueSize");
-            Console.WriteLine("    Sampling interval:         " + maxQueueSize);
-            endPointSecurity = readNode(xmlDocument, "config/opcuaServer/endPointSecurity");
-            Console.WriteLine("    Sampling interval:         " + endPointSecurity);
-            readNodesList(xmlDocument, "/config/nodes/node");
+            configurationParameters.serverUrl = readNode(xmlDocument, "config/opcuaServer/url");
+            Global.logFile.WriteLine("    Server url:                " + configurationParameters.serverUrl);
+            configurationParameters.publishingInterval = readNode(xmlDocument, "config/opcuaServer/publishingInterval");
+            Global.logFile.WriteLine("    Publishing interval:       " + configurationParameters.publishingInterval);
+            configurationParameters.samplingInterval = readNode(xmlDocument, "config/opcuaServer/samplingInterval");
+            Global.logFile.WriteLine("    Sampling interval:         " + configurationParameters.samplingInterval);
+            configurationParameters.maxQueueSize = readNode(xmlDocument, "config/opcuaServer/maxQueueSize");
+            Global.logFile.WriteLine("    Max queue size:            " + configurationParameters.maxQueueSize);
+            configurationParameters.endPointSecurity = readNode(xmlDocument, "config/opcuaServer/endPointSecurity");
+            Global.logFile.WriteLine("    End point security:        " + configurationParameters.endPointSecurity);
+            configurationParameters.nodes = readNodesList(xmlDocument, "/config/nodes/node");
         }
         private XmlDocument readXmlDocument()
         {
             string filePath = Environment.CurrentDirectory + "\\" + AppDomain.CurrentDomain.FriendlyName.Replace(".exe", "") + "_Config.xml";
-            Console.WriteLine("    File name:                 " + AppDomain.CurrentDomain.FriendlyName.Replace(".exe", "") + "_Config.xml");
+            Global.logFile.WriteLine("    File name:                 " + AppDomain.CurrentDomain.FriendlyName.Replace(".exe", "") + "_Config.xml");
             XmlDocument xmlDocument = new XmlDocument();
             xmlDocument.Load(Environment.CurrentDirectory + "\\" + AppDomain.CurrentDomain.FriendlyName.Replace(".exe", "") + "_Config.xml");
             return xmlDocument;
         }
-        public string ServerUrl
+        public ConfigParams ConfigurationParameters
         {
-            get { return serverUrl; }
-        }
-        public int PublishingInterval
-        {
-            get { return publishingInterval; }
-        }
-        public int SamplingInterval
-        {
-            get { return samplingInterval; }
-        }
-        public int MaxQueueSize
-        {
-            get { return maxQueueSize; }
-        }
-        public bool EndPointSecurity
-        {
-            get { return endPointSecurity; }
+            get { return configurationParameters; }
         }
         public ConfigFile()
         {
-            Console.WriteLine("Reading XML Config file ...");
-            Console.WriteLine();
+            Global.logFile.WriteLine("Reading XML Config file ...");
+            Global.logFile.WriteLine(null);
             readNodes(readXmlDocument());
-            Console.WriteLine("XML Config file read!");
-            Console.WriteLine();
+            Global.logFile.WriteLine("XML Config file read!");
+            Global.logFile.WriteLine(null);
         }
     }
 }

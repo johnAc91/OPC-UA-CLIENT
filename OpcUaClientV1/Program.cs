@@ -32,7 +32,7 @@ namespace OpcUaClientV1
             {
                 Global.ConsoleException("Error preparing csv file!", exc.Message);
             }
-            // Read XML Config file
+            // Read XML Config file     -------> Try to include this information into file ClientApplication.Config.xml
             try
             {
                 ConfigFile configFile = new ConfigFile();
@@ -42,6 +42,16 @@ namespace OpcUaClientV1
             {
                 Global.ConsoleAndLogException("Error reading XML Config file!", exc.Message);
             }
+            // Application configuration
+            try
+            {
+                Global.opcuaApp = new OpcuaApp(Constants.ApplicationName, Constants.ConfigFileName);
+            }
+            catch (Exception exc)
+            {
+                Global.ConsoleAndLogException("Error preparing application!", exc.Message);
+            }
+            // Keep console opened
             Console.ReadKey();
         }
     }

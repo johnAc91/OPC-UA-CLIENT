@@ -49,7 +49,8 @@ namespace OpcUaClientV1
             Console.WriteLine("");
             Console.WriteLine("    File name:                       " + fileName);
             Console.WriteLine();
-            path = Environment.CurrentDirectory + "\\" + fileName;
+            //path = Environment.CurrentDirectory + "\\" + fileName;
+            path = fileName;
             Console.WriteLine(fileName + " ready!");
             Console.WriteLine();
             Console.WriteLine();

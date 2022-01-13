@@ -12,6 +12,16 @@ namespace OpcUaClientV1
     {
         static void Main(string[] args)
         {
+            // For testing only
+            System.Xml.XmlDocument xmlDocument = new System.Xml.XmlDocument();
+            System.Xml.XmlNode xmlNode;
+            xmlDocument.Load(Constants.ConfigFileName);
+            Console.WriteLine(xmlDocument.InnerText);
+            xmlNode = xmlDocument.SelectSingleNode("ApplicationConfiguration/ApplicationName");
+            Console.WriteLine(xmlNode.InnerText);
+
+
+
             Global.initTimeStamp = DateTime.Now;
             // Prepare log file
             try
@@ -36,7 +46,7 @@ namespace OpcUaClientV1
             try
             {
                 ConfigFile configFile = new ConfigFile();
-                Global.configParams = configFile.ConfigurationParameters;
+                Global.configParams = configFile.ServerParameters;
             }
             catch(Exception exc)
             {

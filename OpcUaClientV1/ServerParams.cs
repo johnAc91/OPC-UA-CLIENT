@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OpcUaClientV1
 {
-    internal class ConfigParams
+    internal class ServerParams
     {
         public string serverUrl;
         public int publishingInterval;

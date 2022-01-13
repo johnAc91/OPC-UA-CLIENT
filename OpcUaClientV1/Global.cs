@@ -11,7 +11,7 @@ namespace OpcUaClientV1
     {
         public static DateTime initTimeStamp;
         public static TextFile logFile, csvFile;
-        public static ConfigParams configParams;
+        public static ServerParams configParams;
         public static OpcuaApp opcuaApp;
         public static void ConsoleException(string title, string body)
         {

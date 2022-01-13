@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Opc.Ua.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace OpcUaClientV1
         public static DateTime initTimeStamp;
         public static TextFile logFile, csvFile;
         public static ConfigParams configParams;
+        public static OpcuaApp opcuaApp;
         public static void ConsoleException(string title, string body)
         {
             Console.WriteLine();

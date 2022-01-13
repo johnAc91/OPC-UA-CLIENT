@@ -1,0 +1,8 @@
+Reading XML Config file ...
+
+    File name:                       ClientApplication.Config.xml
+
+Error reading XML Config file!
+There are multiple root elements. Line 91, position 2.
+
+Press any key to exit 

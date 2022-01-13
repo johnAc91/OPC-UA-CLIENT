@@ -207,7 +207,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigParams.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Global.cs" />
+    <Compile Include="OpcuaApp.cs" />
     <Compile Include="TextFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

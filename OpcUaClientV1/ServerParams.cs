@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace OpcUaClientV1
 {
-    internal class ConfigParams
+    internal class ServerParams
     {
-        public string serverUrl;
+        public string url;
         public int publishingInterval;
         public int samplingInterval;
         public int maxQueueSize;

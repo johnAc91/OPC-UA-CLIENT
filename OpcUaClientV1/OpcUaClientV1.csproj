@@ -206,7 +206,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigParams.cs" />
+    <Compile Include="OpcuaEndpoint.cs" />
+    <Compile Include="ServerParams.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="OpcuaApp.cs" />

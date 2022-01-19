@@ -32,11 +32,11 @@ namespace OpcUaClientV1
             {
                 Global.ConsoleException("Error preparing csv file!", exc.Message);
             }
-            // Read XML Config file     -------> Try to include this information into file ClientApplication.Config.xml
+            // Read XML Config file
             try
             {
                 ConfigFile configFile = new ConfigFile();
-                Global.configParams = configFile.ConfigurationParameters;
+                Global.serverParams = configFile.ServerParameters;
             }
             catch(Exception exc)
             {
@@ -45,11 +45,20 @@ namespace OpcUaClientV1
             // Application configuration
             try
             {
-                Global.opcuaApp = new OpcuaApp(Constants.ApplicationName, Constants.ConfigFileName);
+                Global.opcuaApp = new OpcuaApp(Constants.ConfigFileName);
             }
             catch (Exception exc)
             {
                 Global.ConsoleAndLogException("Error preparing application!", exc.Message);
+            }
+            // Connect end point
+            try
+            {
+                Global.opcuaEndpoint = new OpcuaEndpoint(Global.serverParams.url, Global.opcuaApp.Application.ApplicationConfiguration, Global.serverParams.endPointSecurity);
+            }
+            catch (Exception exc)
+            {
+                Global.ConsoleAndLogException("Error preparing enpoint!", exc.Message);
             }
             // Keep console opened
             Console.ReadKey();

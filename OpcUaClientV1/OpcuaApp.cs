@@ -18,13 +18,11 @@ namespace OpcUaClientV1
                 return application;
             }
         }
-        public OpcuaApp(string applicationName, string configFileName)
+        public OpcuaApp(string configFileName)
         {
             Global.logFile.WriteLine("Preparing OPC UA Client application ...");
             Global.logFile.WriteLine(null);
             application = new ApplicationInstance();
-            Global.logFile.WriteLine("    Application name:                " + applicationName);
-            application.ApplicationName = applicationName;
             Global.logFile.WriteLine("    Application type:                " + ApplicationType.Client);
             application.ApplicationType = ApplicationType.Client;
             Global.logFile.WriteLine("    Application config file name:    " + configFileName);

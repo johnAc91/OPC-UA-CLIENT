@@ -36,7 +36,7 @@ namespace OpcUaClientV1
             try
             {
                 ConfigFile configFile = new ConfigFile();
-                Global.serverParams = configFile.ServerParameters;
+                Global.serverParams = configFile.serverParams;
             }
             catch(Exception exc)
             {
@@ -51,14 +51,27 @@ namespace OpcUaClientV1
             {
                 Global.ConsoleAndLogException("Error preparing application!", exc.Message);
             }
-            // Connect end point
+            // Connect endpoint
             try
             {
-                Global.opcuaEndpoint = new OpcuaEndpoint(Global.serverParams.url, Global.opcuaApp.Application.ApplicationConfiguration, Global.serverParams.endPointSecurity);
+                Global.opcuaEndpoint = new OpcuaEndpoint(Global.serverParams, Global.opcuaApp.applicationInstance.ApplicationConfiguration);
             }
             catch (Exception exc)
             {
                 Global.ConsoleAndLogException("Error preparing enpoint!", exc.Message);
+            }
+            // Create session
+            try
+            {
+                Global.opcuaSubscription = new OpcuaSession(Global.opcuaApp.applicationInstance.ApplicationConfiguration,
+                                                            Global.opcuaEndpoint.configuredEndPoint,
+                                                            "OPC UA Client",
+                                                            30 * 60 * 1000,
+                                                            new UserIdentity());
+            }
+            catch (Exception exc)
+            {
+                Global.ConsoleAndLogException("Error preparing session!", exc.Message);
             }
             // Keep console opened
             Console.ReadKey();

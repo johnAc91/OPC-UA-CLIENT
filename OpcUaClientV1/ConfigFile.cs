@@ -10,7 +10,7 @@ namespace OpcUaClientV1
 {
     internal class ConfigFile
     {
-        private ServerParams serverParameters = new ServerParams();
+        private ServerParams _serverParams = new ServerParams();
         private dynamic readNode(XmlDocument xmlDocument, string xmlNodeDirection)
         {
             XmlNode xmlNode = xmlDocument.SelectSingleNode(xmlNodeDirection);
@@ -51,17 +51,17 @@ namespace OpcUaClientV1
         }
         private void readNodes(XmlDocument xmlDocument)
         {
-            serverParameters.url = readNode(xmlDocument, "config/opcuaServer/url");
-            Global.logFile.WriteLine("    Server url:                      " + serverParameters.url);
-            serverParameters.publishingInterval = readNode(xmlDocument, "/config/opcuaServer/publishingInterval");
-            Global.logFile.WriteLine("    Publishing interval:             " + serverParameters.publishingInterval);
-            serverParameters.samplingInterval = readNode(xmlDocument, "/config/opcuaServer/samplingInterval");
-            Global.logFile.WriteLine("    Sampling interval:               " + serverParameters.samplingInterval);
-            serverParameters.maxQueueSize = readNode(xmlDocument, "/config/opcuaServer/maxQueueSize");
-            Global.logFile.WriteLine("    Max queue size:                  " + serverParameters.maxQueueSize);
-            serverParameters.endPointSecurity = readNode(xmlDocument, "/config/opcuaServer/endPointSecurity");
-            Global.logFile.WriteLine("    End point security:              " + serverParameters.endPointSecurity);
-            serverParameters.nodes = readNodesList(xmlDocument, "/config/nodes/node");
+            _serverParams.url = readNode(xmlDocument, "config/opcuaServer/url");
+            Global.logFile.WriteLine("    Server url:                      " + _serverParams.url);
+            _serverParams.publishingInterval = readNode(xmlDocument, "/config/opcuaServer/publishingInterval");
+            Global.logFile.WriteLine("    Publishing interval:             " + _serverParams.publishingInterval);
+            _serverParams.samplingInterval = readNode(xmlDocument, "/config/opcuaServer/samplingInterval");
+            Global.logFile.WriteLine("    Sampling interval:               " + _serverParams.samplingInterval);
+            _serverParams.maxQueueSize = readNode(xmlDocument, "/config/opcuaServer/maxQueueSize");
+            Global.logFile.WriteLine("    Max queue size:                  " + _serverParams.maxQueueSize);
+            _serverParams.endPointSecurity = readNode(xmlDocument, "/config/opcuaServer/endPointSecurity");
+            Global.logFile.WriteLine("    End point security:              " + _serverParams.endPointSecurity);
+            _serverParams.nodes = readNodesList(xmlDocument, "/config/nodes/node");
         }
         private XmlDocument readXmlDocument()
         {
@@ -70,9 +70,9 @@ namespace OpcUaClientV1
             xmlDocument.Load(AppDomain.CurrentDomain.FriendlyName.Replace(".exe", "") + "_Config.xml");
             return xmlDocument;
         }
-        public ServerParams ServerParameters
+        public ServerParams serverParams
         {
-            get { return serverParameters; }
+            get { return _serverParams; }
         }
         public ConfigFile()
         {

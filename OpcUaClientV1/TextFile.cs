@@ -9,12 +9,12 @@ namespace OpcUaClientV1
 {
     internal class TextFile
     {
-        private string path;
-        public string Path
+        private string _path;
+        public string path
         {
             get
             {
-                return path;
+                return _path;
             }
         }
         public void WriteLine(string data)
@@ -50,7 +50,7 @@ namespace OpcUaClientV1
             Console.WriteLine("    File name:                       " + fileName);
             Console.WriteLine();
             //path = Environment.CurrentDirectory + "\\" + fileName;
-            path = fileName;
+            _path = fileName;
             Console.WriteLine(fileName + " ready!");
             Console.WriteLine();
             Console.WriteLine();

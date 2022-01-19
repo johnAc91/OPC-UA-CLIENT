@@ -15,6 +15,7 @@ namespace OpcUaClientV1
         public static ServerParams serverParams;
         public static OpcuaApp opcuaApp;
         public static OpcuaEndpoint opcuaEndpoint;
+        public static OpcuaSession opcuaSubscription;
         public static void ConsoleException(string title, string body)
         {
             Console.WriteLine();

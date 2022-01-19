@@ -10,23 +10,23 @@ namespace OpcUaClientV1
 {
     internal class OpcuaApp
     {
-        private ApplicationInstance application;
-        public ApplicationInstance Application
+        private ApplicationInstance _applicationInstance;
+        public ApplicationInstance applicationInstance
         {
             get
             {
-                return application;
+                return _applicationInstance;
             }
         }
         public OpcuaApp(string configFileName)
         {
             Global.logFile.WriteLine("Preparing OPC UA Client application ...");
             Global.logFile.WriteLine(null);
-            application = new ApplicationInstance();
+            _applicationInstance = new ApplicationInstance();
             Global.logFile.WriteLine("    Application type:                " + ApplicationType.Client);
-            application.ApplicationType = ApplicationType.Client;
+            _applicationInstance.ApplicationType = ApplicationType.Client;
             Global.logFile.WriteLine("    Application config file name:    " + configFileName);
-            application.LoadApplicationConfiguration(Environment.CurrentDirectory + "\\" + configFileName, false).Wait();
+            _applicationInstance.LoadApplicationConfiguration(Environment.CurrentDirectory + "\\" + configFileName, false).Wait();
             Global.logFile.WriteLine("    Application certificate:         " + "Disabled");
             // Validate certificate
             Global.logFile.WriteLine(null);

@@ -10,40 +10,40 @@ namespace OpcUaClientV1
 {
     internal class OpcuaEndpoint
     {
-        private ConfiguredEndpoint endPoint;
-        public ConfiguredEndpoint EndPoint
+        private ConfiguredEndpoint _configuredEndPoint;
+        public ConfiguredEndpoint configuredEndPoint
         {
             get
             {
-                return endPoint;
+                return _configuredEndPoint;
             }
         }
-        private EndpointDescription endPointParams;
-        public EndpointDescription EndPointParams
+        private EndpointDescription _endpointDescription;
+        public EndpointDescription endpointDescription
         {
             get
             {
-                return endPointParams;
+                return _endpointDescription;
             }
         }
-        private EndpointConfiguration endpointConfig;
-        public EndpointConfiguration EndpointConfig
+        private EndpointConfiguration _endpointConfiguration;
+        public EndpointConfiguration endpointConfiguration
         {
             get
             {
-                return endpointConfig;
+                return _endpointConfiguration;
             }
         }
-        public OpcuaEndpoint(string serverUrl, ApplicationConfiguration applicationConfiguration, bool security = false)
+        public OpcuaEndpoint(ServerParams serverParams, ApplicationConfiguration applicationConfiguration)
         {
             Global.logFile.WriteLine("Preparing OPC UA Server endpoint connection ...");
             Global.logFile.WriteLine(null);
-            Global.logFile.WriteLine("    Server url:                      " + serverUrl);
+            Global.logFile.WriteLine("    Server url:                      " + serverParams.url);
             Global.logFile.WriteLine("    Endpoint security:               " + false);
-            endPointParams = CoreClientUtils.SelectEndpoint(serverUrl, security);
+            _endpointDescription = CoreClientUtils.SelectEndpoint(serverParams.url, serverParams.endPointSecurity);
             Global.logFile.WriteLine("    Application name:                " + applicationConfiguration.ApplicationName);
-            endpointConfig = EndpointConfiguration.Create(applicationConfiguration);
-            endPoint = new ConfiguredEndpoint(null, endPointParams, endpointConfig);
+            _endpointConfiguration = EndpointConfiguration.Create(applicationConfiguration);
+            _configuredEndPoint = new ConfiguredEndpoint(null, _endpointDescription, _endpointConfiguration);
             Global.logFile.WriteLine(null);
             Global.logFile.WriteLine("OPC UA Server endpoint ready!");
             Global.logFile.WriteLine(null);

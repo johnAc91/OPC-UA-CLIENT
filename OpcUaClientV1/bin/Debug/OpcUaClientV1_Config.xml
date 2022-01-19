@@ -3,7 +3,7 @@
 <config>
 
 <opcuaServer>
-    	<url>opc.tcp://15.83.32.91:4840</url>
+    	<url>opc.tcp://15.83.20.58:4840</url>
     	<publishingInterval>1000</publishingInterval>
 	<samplingInterval>100</samplingInterval>
 	<maxQueueSize>10</maxQueueSize>

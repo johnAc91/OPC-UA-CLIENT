@@ -51,8 +51,8 @@ namespace OpcUaClientV1
         }
         private void readNodes(XmlDocument xmlDocument)
         {
-            serverParameters.serverUrl = readNode(xmlDocument, "config/opcuaServer/url");
-            Global.logFile.WriteLine("    Server url:                      " + serverParameters.serverUrl);
+            serverParameters.url = readNode(xmlDocument, "config/opcuaServer/url");
+            Global.logFile.WriteLine("    Server url:                      " + serverParameters.url);
             serverParameters.publishingInterval = readNode(xmlDocument, "/config/opcuaServer/publishingInterval");
             Global.logFile.WriteLine("    Publishing interval:             " + serverParameters.publishingInterval);
             serverParameters.samplingInterval = readNode(xmlDocument, "/config/opcuaServer/samplingInterval");

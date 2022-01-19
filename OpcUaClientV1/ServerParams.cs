@@ -9,7 +9,7 @@ namespace OpcUaClientV1
 {
     internal class ServerParams
     {
-        public string serverUrl;
+        public string url;
         public int publishingInterval;
         public int samplingInterval;
         public int maxQueueSize;

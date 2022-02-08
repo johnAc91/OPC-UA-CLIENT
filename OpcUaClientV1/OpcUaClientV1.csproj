@@ -206,8 +206,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Node.cs" />
+    <Compile Include="NodesSubscription.cs" />
     <Compile Include="OpcuaSession.cs" />
     <Compile Include="OpcuaEndpoint.cs" />
+    <Compile Include="OpcuaSubscription.cs" />
     <Compile Include="ServerParams.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Global.cs" />

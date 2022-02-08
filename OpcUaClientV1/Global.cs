@@ -1,4 +1,5 @@
 ﻿using Opc.Ua;
+using Opc.Ua.Client;
 using Opc.Ua.Configuration;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,9 @@ namespace OpcUaClientV1
         public static ServerParams serverParams;
         public static OpcuaApp opcuaApp;
         public static OpcuaEndpoint opcuaEndpoint;
-        public static OpcuaSession opcuaSubscription;
+        public static OpcuaSession opcuaSession;
+        public static OpcuaSubscription opcuaSubscription;
+        public static NodesSubscription nodesSubscription;
         public static void ConsoleException(string title, string body)
         {
             Console.WriteLine();

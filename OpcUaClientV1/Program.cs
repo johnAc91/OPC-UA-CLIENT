@@ -63,7 +63,7 @@ namespace OpcUaClientV1
             // Create session
             try
             {
-                Global.opcuaSubscription = new OpcuaSession(Global.opcuaApp.applicationInstance.ApplicationConfiguration,
+                Global.opcuaSession = new OpcuaSession(Global.opcuaApp.applicationInstance.ApplicationConfiguration,
                                                             Global.opcuaEndpoint.configuredEndPoint,
                                                             "OPC UA Client",
                                                             30 * 60 * 1000,
@@ -73,6 +73,17 @@ namespace OpcUaClientV1
             {
                 Global.ConsoleAndLogException("Error preparing session!", exc.Message);
             }
+            // Create subscription
+            try
+            {
+                Global.opcuaSubscription = new OpcuaSubscription(Global.opcuaSession.session, Global.serverParams, "OPC UA Subscription");
+            }
+            catch (Exception exc)
+            {
+                Global.ConsoleAndLogException("Error preparing subscription!", exc.Message);
+            }
+            // Create nodes subscription (on going)
+            Global.nodesSubscription = new NodesSubscription(Global.opcuaSubscription.subscription, Global.serverParams);
             // Keep console opened
             Console.ReadKey();
         }

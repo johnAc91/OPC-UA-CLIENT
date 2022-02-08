@@ -31,3 +31,24 @@ Preparing OPC UA Server endpoint connection ...
 OPC UA Server endpoint ready!
 
 
+Preparing OPC UA session ...
+
+    Application name:                Quickstart Console Reference Client
+    Configured endpoint:             opc.tcp://15.83.20.58:4840/
+    Update before connect:           False
+    Check domain   :                 False
+    Session name:                    OPC UA Client
+    Session timeout:                 1800s
+    User identity:                   Opc.Ua.UserIdentity
+
+OPC UA Session ready!
+
+
+Preparing OPC UA subscription ...
+
+    Subscription name:               OPC UA Subscription
+    Publishing interval:             1000
+
+OPC UA Subscription ready!
+
+

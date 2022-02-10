@@ -73,19 +73,29 @@ namespace OpcUaClientV1
             {
                 Global.ConsoleAndLogException("Error preparing session!", exc.Message);
             }
-            // Create subscription
+            // Create server subscription
             try
             {
                 Global.opcuaSubscription = new OpcuaSubscription(Global.opcuaSession.session, Global.serverParams, "OPC UA Subscription");
             }
             catch (Exception exc)
             {
-                Global.ConsoleAndLogException("Error preparing subscription!", exc.Message);
+                Global.ConsoleAndLogException("Error preparing server subscription!", exc.Message);
             }
-            // Create nodes subscription (on going)
-            Global.nodesSubscription = new NodesSubscription(Global.opcuaSubscription.subscription, Global.serverParams);
-            // Keep console opened
-            Console.ReadKey();
+            // Create nodes subscription
+            try
+            {
+                Global.nodesSubscription = new NodesSubscription(Global.opcuaSubscription.subscription, Global.serverParams, Global.opcuaSession.session);
+            }
+            catch (Exception exc)
+            {
+                Global.ConsoleAndLogException("Error preparing nodes subscription!", exc.Message);
+            }
+            // Check connection (on going)
+            while (true)
+            {
+
+            }
         }
     }
 }

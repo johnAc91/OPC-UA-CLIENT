@@ -206,19 +206,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Node.cs" />
-    <Compile Include="NodesSubscription.cs" />
-    <Compile Include="OpcuaSession.cs" />
-    <Compile Include="OpcuaEndpoint.cs" />
-    <Compile Include="OpcuaSubscription.cs" />
-    <Compile Include="ServerParams.cs" />
+    <Compile Include="General purpose\CheckTimeSpan.cs" />
+    <Compile Include="OPC UA Client\Node.cs" />
+    <Compile Include="OPC UA Client\NodesSubscription.cs" />
+    <Compile Include="OPC UA Client\OpcuaSession.cs" />
+    <Compile Include="OPC UA Client\OpcuaEndpoint.cs" />
+    <Compile Include="OPC UA Client\OpcuaSubscription.cs" />
+    <Compile Include="OPC UA Client\ServerParams.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Global.cs" />
-    <Compile Include="OpcuaApp.cs" />
-    <Compile Include="TextFile.cs" />
+    <Compile Include="OPC UA Client\OpcuaApp.cs" />
+    <Compile Include="General purpose\TextFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ConfigFile.cs" />
+    <Compile Include="OPC UA Client\ConfigFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

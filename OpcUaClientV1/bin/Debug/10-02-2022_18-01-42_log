@@ -9,6 +9,11 @@ Reading XML Config file ...
     Nodes:                           ns=3;s="BVA651"."cm"."status"."interlockBypassed"
                                      ns=3;s="BVA651"."cm"."status"."simulated"
                                      ns=4;i=2033800
+                                     ns=3;s="BVA807"."cm"."status"."outOfService"
+                                     ns=3;s="DAS805"."cm"."status"."interlocked"
+                                     ns=4;i=2033120
+                                     ns=4;i=2040950
+                                     ns=4;i=2036400
                                      
 XML Config file read!
 

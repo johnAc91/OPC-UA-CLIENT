@@ -9,5 +9,6 @@ namespace OpcUaClientV1
     internal class Constants
     {
         public const string ConfigFileName = "ClientApplication.Config.xml";
+        public const int utcServerDifference = 1;
     }
 }

@@ -207,6 +207,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="General purpose\CheckTimeSpan.cs" />
+    <Compile Include="OPC UA Client\OpcuaConnection.cs" />
     <Compile Include="OPC UA Client\Node.cs" />
     <Compile Include="OPC UA Client\NodesSubscription.cs" />
     <Compile Include="OPC UA Client\OpcuaSession.cs" />

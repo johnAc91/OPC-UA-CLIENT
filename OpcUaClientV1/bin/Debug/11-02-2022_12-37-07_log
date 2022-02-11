@@ -43,7 +43,7 @@ Preparing OPC UA session ...
     Update before connect:           False
     Check domain   :                 False
     Session name:                    OPC UA Client
-    Session timeout:                 1800s
+    Session timeout:                 300s
     User identity:                   Opc.Ua.UserIdentity
 
 OPC UA Session ready!
@@ -107,7 +107,7 @@ Preparing nodes subscription ...
 
 Subscripting node "BVA651"."cm"."status"."interlockBypassed"...
 
-10/02/2022 18:01:54
+11/02/2022 12:40:10
 "BVA651"."cm"."status"."interlockBypassed"
 False
 
@@ -115,7 +115,7 @@ Subscription to node "BVA651"."cm"."status"."interlockBypassed" done!
 
 Subscripting node "BVA651"."cm"."status"."simulated"...
 
-10/02/2022 18:01:55
+11/02/2022 12:40:11
 "BVA651"."cm"."status"."simulated"
 False
 
@@ -123,7 +123,7 @@ Subscription to node "BVA651"."cm"."status"."simulated" done!
 
 Subscripting node 2033800...
 
-10/02/2022 18:01:56
+11/02/2022 12:40:12
 2033800
 0,02364687
 
@@ -131,11 +131,7 @@ Subscription to node 2033800 done!
 
 Subscripting node "BVA807"."cm"."status"."outOfService"...
 
-10/02/2022 18:01:57
-2033800
-0,02364687
-
-10/02/2022 18:01:57
+11/02/2022 12:40:13
 "BVA807"."cm"."status"."outOfService"
 False
 
@@ -143,23 +139,19 @@ Subscription to node "BVA807"."cm"."status"."outOfService" done!
 
 Subscripting node "DAS805"."cm"."status"."interlocked"...
 
-10/02/2022 18:01:58
+11/02/2022 12:40:14
 2033800
 0,02364687
 
-10/02/2022 18:01:58
+11/02/2022 12:40:14
 "DAS805"."cm"."status"."interlocked"
-True
+False
 
 Subscription to node "DAS805"."cm"."status"."interlocked" done!
 
 Subscripting node 2033120...
 
-10/02/2022 18:01:59
-2033800
-0,02364687
-
-10/02/2022 18:01:59
+11/02/2022 12:40:15
 2033120
 False
 
@@ -167,11 +159,7 @@ Subscription to node 2033120 done!
 
 Subscripting node 2040950...
 
-10/02/2022 18:02:00
-2033800
-0,02364687
-
-10/02/2022 18:02:00
+11/02/2022 12:40:16
 2040950
 False
 
@@ -179,16 +167,33 @@ Subscription to node 2040950 done!
 
 Subscripting node 2036400...
 
-10/02/2022 18:02:01
-2033800
-0,02128219
-
-10/02/2022 18:02:01
+11/02/2022 12:40:17
 2036400
 0
 
 Subscription to node 2036400 done!
 
-10/02/2022 18:02:02
 Nodes subscription done!
 
+
+11/02/2022 12:40:27
+2033800
+0,02364687
+
+11/02/2022 12:37:28
+Last keep alive received at 11/02/2022 11:37:28
+Session ok
+
+11/02/2022 12:37:38
+Last keep alive received at 11/02/2022 11:37:30
+Session ok
+
+11/02/2022 12:37:48
+Last keep alive received at 11/02/2022 11:37:30
+Keep alive error!
+Reconnecting ...
+
+Connection error!
+BadNotConnected
+
+Press any key to exit 

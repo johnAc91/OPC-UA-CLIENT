@@ -66,7 +66,7 @@ namespace OpcUaClientV1
                 Global.opcuaSession = new OpcuaSession(Global.opcuaApp.applicationInstance.ApplicationConfiguration,
                                                             Global.opcuaEndpoint.configuredEndPoint,
                                                             "OPC UA Client",
-                                                            30 * 60 * 1000,
+                                                            5 * 60 * 1000,
                                                             new UserIdentity());
             }
             catch (Exception exc)
@@ -91,10 +91,24 @@ namespace OpcUaClientV1
             {
                 Global.ConsoleAndLogException("Error preparing nodes subscription!", exc.Message);
             }
-            // Check connection (on going)
+            // Check connection
             while (true)
             {
-
+                try
+                {
+                    CheckTimeSpan checkTimeSpan = new CheckTimeSpan(10);
+                    while (!checkTimeSpan.timeSpanReached())
+                    {
+                        // Wait
+                    }
+                    OPC_UA_Client.OpcuaConnection.checkAndReconnect(Global.opcuaSession.session);
+                }
+                catch (Exception exc)
+                {
+                    Global.logFile.WriteLine("Connection error!");
+                    Global.logFile.WriteLine(exc.Message);
+                    Global.logFile.WriteLine(null);
+                }
             }
         }
     }

@@ -1,0 +1,9 @@
+Time Stamp,Node ID,Value
+11/02/2022 13:04:19,"BVA651"."cm"."status"."interlockBypassed",False
+11/02/2022 13:04:20,"BVA651"."cm"."status"."simulated",False
+11/02/2022 13:04:21,2033800,0.02364687
+11/02/2022 13:04:22,"BVA807"."cm"."status"."outOfService",False
+11/02/2022 13:04:23,"DAS805"."cm"."status"."interlocked",False
+11/02/2022 13:04:24,2033120,False
+11/02/2022 13:04:25,2040950,False
+11/02/2022 13:04:26,2036400,0

@@ -43,7 +43,7 @@ Preparing OPC UA session ...
     Update before connect:           False
     Check domain   :                 False
     Session name:                    OPC UA Client
-    Session timeout:                 1800s
+    Session timeout:                 300s
     User identity:                   Opc.Ua.UserIdentity
 
 OPC UA Session ready!
@@ -107,7 +107,7 @@ Preparing nodes subscription ...
 
 Subscripting node "BVA651"."cm"."status"."interlockBypassed"...
 
-10/02/2022 18:02:28
+11/02/2022 13:44:47
 "BVA651"."cm"."status"."interlockBypassed"
 False
 
@@ -115,7 +115,7 @@ Subscription to node "BVA651"."cm"."status"."interlockBypassed" done!
 
 Subscripting node "BVA651"."cm"."status"."simulated"...
 
-10/02/2022 18:02:29
+11/02/2022 13:44:48
 "BVA651"."cm"."status"."simulated"
 False
 
@@ -123,19 +123,15 @@ Subscription to node "BVA651"."cm"."status"."simulated" done!
 
 Subscripting node 2033800...
 
-10/02/2022 18:02:30
+11/02/2022 13:44:49
 2033800
-0,02128219
+0,02364687
 
 Subscription to node 2033800 done!
 
 Subscripting node "BVA807"."cm"."status"."outOfService"...
 
-10/02/2022 18:02:31
-2033800
-0,02128219
-
-10/02/2022 18:02:31
+11/02/2022 13:44:50
 "BVA807"."cm"."status"."outOfService"
 False
 
@@ -143,128 +139,8 @@ Subscription to node "BVA807"."cm"."status"."outOfService" done!
 
 Subscripting node "DAS805"."cm"."status"."interlocked"...
 
-10/02/2022 18:02:32
-2033800
-0,02128219
-
-10/02/2022 18:02:32
+11/02/2022 13:44:51
+11/02/2022 13:44:52
 "DAS805"."cm"."status"."interlocked"
-True
-
-Subscription to node "DAS805"."cm"."status"."interlocked" done!
-
-Subscripting node 2033120...
-
-10/02/2022 18:02:33
 2033800
 0,02364687
-
-10/02/2022 18:02:33
-2033120
-False
-
-Subscription to node 2033120 done!
-
-Subscripting node 2040950...
-
-10/02/2022 18:02:34
-2033800
-0,02128219
-
-10/02/2022 18:02:34
-2040950
-False
-
-Subscription to node 2040950 done!
-
-Subscripting node 2036400...
-
-10/02/2022 18:02:35
-2033800
-0,02364687
-
-10/02/2022 18:02:35
-2036400
-0
-
-Subscription to node 2036400 done!
-
-Nodes subscription done!
-
-
-10/02/2022 18:02:36
-2033800
-0,02128219
-
-10/02/2022 18:02:37
-2033800
-0,02364687
-
-10/02/2022 18:02:38
-2033800
-0,02128219
-
-10/02/2022 18:02:39
-2033800
-0,02128219
-
-10/02/2022 18:02:46
-2033800
-0,02128219
-
-10/02/2022 18:02:40
-2033800
-0,02128219
-
-10/02/2022 18:02:41
-2033800
-0,02364687
-
-10/02/2022 18:02:43
-2033800
-0,02364687
-
-10/02/2022 18:02:42
-2033800
-0,02128219
-
-10/02/2022 18:02:44
-2033800
-0,02364687
-
-10/02/2022 18:02:45
-2033800
-0,02364687
-
-10/02/2022 18:02:47
-2033800
-0,02128219
-
-10/02/2022 18:02:48
-2033800
-0,02128219
-
-10/02/2022 18:02:49
-2033800
-0,02364687
-
-10/02/2022 18:02:51
-2033800
-0,02128219
-
-10/02/2022 18:02:52
-2033800
-0,02364687
-
-10/02/2022 18:02:53
-2033800
-0,02128219
-
-10/02/2022 18:02:54
-2033800
-0,02364687
-
-10/02/2022 18:02:55
-2033800
-0,02364687
-

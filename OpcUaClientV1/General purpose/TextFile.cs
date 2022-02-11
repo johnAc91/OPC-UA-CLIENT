@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,29 +20,57 @@ namespace OpcUaClientV1
         }
         public void WriteLine(string data)
         {
-            StreamWriter logFile = new System.IO.StreamWriter(path, true);
-            logFile.WriteLine(data);
-            logFile.Close();
-            Console.WriteLine(data);
+            try
+            {
+                Console.WriteLine(data);
+                StreamWriter logFile = new System.IO.StreamWriter(path, true);
+                logFile.WriteLine(data);
+                logFile.Close();
+            }
+            catch
+            {
+                Console.WriteLine("Unable to write stream data.");
+            }
         }
         public void Write(string data)
         {
-            StreamWriter logFile = new System.IO.StreamWriter(path, true);
-            logFile.Write(data);
-            logFile.Close();
-            Console.Write(data);
+            try
+            {
+                Console.Write(data);
+                StreamWriter logFile = new System.IO.StreamWriter(path, true);
+                logFile.Write(data);
+                logFile.Close();
+            }
+            catch
+            {
+                Console.WriteLine("Unable to write stream data.");
+            }
         }
         public void WriteLineOnlyFile(string data)
         {
-            StreamWriter logFile = new System.IO.StreamWriter(path, true);
-            logFile.WriteLine(data);
-            logFile.Close();
+            try
+            {
+                StreamWriter logFile = new System.IO.StreamWriter(path, true);
+                logFile.WriteLine(data);
+                logFile.Close();
+            }
+            catch
+            {
+                Console.WriteLine("Unable to write stream data.");
+            }
         }
         public void WriteOnlyFile(string data)
         {
-            StreamWriter logFile = new System.IO.StreamWriter(path, true);
-            logFile.Write(data);
-            logFile.Close();
+            try
+            {
+                StreamWriter logFile = new System.IO.StreamWriter(path, true);
+                logFile.Write(data);
+                logFile.Close();
+            }
+            catch
+            {
+                Console.WriteLine("Unable to write stream data.");
+            }
         }
         public TextFile(string fileName)
         {

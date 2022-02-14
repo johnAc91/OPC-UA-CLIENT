@@ -1,0 +1,30 @@
+Reading XML Config file ...
+
+    File name:                       OpcUaClientV1_Config.xml
+    Server url:                      opc.tcp://15.83.19.197:4840
+    Publishing interval:             1000
+    Sampling interval:               100
+    Max queue size:                  10
+    End point security:              False
+    Nodes:                           ns=3;s="WEI109"."status"."analogInput"."processValue"
+                                     ns=4;i=2030600
+                                     ns=4;i=2030700
+                                     ns=4;i=2023800
+                                     ns=4;i=2025800
+                                     
+XML Config file read!
+
+
+Preparing OPC UA Client application ...
+
+    Application type:                Client
+    Application config file name:    ClientApplication.Config.xml
+    Application certificate:         Disabled
+
+OPC UA Client application ready!
+
+
+Preparing OPC UA Server endpoint connection ...
+
+    Server url:                      opc.tcp://15.83.19.197:4840
+    Endpoint security:               False

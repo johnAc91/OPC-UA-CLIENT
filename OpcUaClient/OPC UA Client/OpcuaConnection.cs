@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace OpcUaClientV1.OPC_UA_Client
+namespace OpcUaClient.OPC_UA_Client
 {
     internal static class OpcuaConnection
     {

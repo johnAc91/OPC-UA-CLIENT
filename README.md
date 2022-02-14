@@ -41,7 +41,12 @@ Improvements and bugs
 ---- OPC UA Client V2 -----------------------------------------------------
 ---------------------------------------------------------------------------
 
+ON GOING
+
 Application type
 	Console App
 
-To be defined.
+New funcitonalities
+	- The .txt files just are written periodically.
+	- Classes reorganized by using heritage.
+	- Reconnection modified to avoid unsepcted application closures.

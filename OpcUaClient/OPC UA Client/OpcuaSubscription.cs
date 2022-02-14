@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OpcUaClientV1
+namespace OpcUaClient
 {
     internal class OpcuaSubscription
     {

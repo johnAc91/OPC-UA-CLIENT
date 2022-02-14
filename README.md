@@ -42,6 +42,6 @@ Improvements and bugs
 ---------------------------------------------------------------------------
 
 Application type
-	Windows Forms
+	Console App
 
 To be defined.

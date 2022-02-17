@@ -43,4 +43,4 @@ Application type
 	Console App
 
 New funcitonalities
-	- The .txt files just are written periodically.
+	- The .txt files just are written periodically with the connection check.

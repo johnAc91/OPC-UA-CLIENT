@@ -30,7 +30,6 @@ namespace OpcUaClient
             for (int i = 0; i < _nodesList.Count(); i++)
             {
                 Global.logFile.WriteLine("Subscripting node " + _nodesList[i].identifier + "...");
-                Global.logFile.WriteLine(null);
                 subscription.AddItem(nodeSubscription(subscription, _nodesList[i], serverParams.samplingInterval));
                 subscription.ApplyChanges();
                 firstDataRcvd = false;
@@ -54,12 +53,16 @@ namespace OpcUaClient
         }
         private void NewValueReceivedNotification(MonitoredItem monitoredItem, MonitoredItemNotificationEventArgs e)
         {
+            /*
             MonitoredItemNotification notification = e.NotificationValue as MonitoredItemNotification;
             Global.logFile.WriteLine(notification.Message.PublishTime.ToString());
             Global.logFile.WriteLine(monitoredItem.DisplayName);
             Global.logFile.WriteLine(notification.Value.ToString());
             Global.logFile.WriteLine(null);
             Global.csvFile.WriteLineOnlyFile(notification.Message.PublishTime.ToString() + "," + monitoredItem.DisplayName.Replace(",", "_") + "," + notification.Value.ToString().Replace(",", "."));
+            */
+            MonitoredItemNotification notification = e.NotificationValue as MonitoredItemNotification;
+            Global.dataChangeList.Add(notification.Message.PublishTime.ToString() + "," + monitoredItem.DisplayName.Replace(",", "_") + "," + notification.Value.ToString().Replace(",", "."));
             if (currentNode == monitoredItem.DisplayName)
             {
                 firstDataRcvd = true;

@@ -91,21 +91,35 @@ namespace OpcUaClient
             {
                 Global.ConsoleAndLogException("Error preparing nodes subscription!", exc.Message);
             }
-            // Check connection
+            // Check connection and write data changes into CSV
             while (true)
             {
+                CheckTimeSpan checkTimeSpan = new CheckTimeSpan(10);
+                while (!checkTimeSpan.timeSpanReached())
+                {
+                    // Wait
+                }
+                // Check connection
                 try
                 {
-                    CheckTimeSpan checkTimeSpan = new CheckTimeSpan(10);
-                    while (!checkTimeSpan.timeSpanReached())
-                    {
-                        // Wait
-                    }
+
                     OPC_UA_Client.OpcuaConnection.checkAndReconnect(Global.opcuaSession.session);
+
                 }
                 catch (Exception exc)
                 {
                     Global.logFile.WriteLine("Connection error!");
+                    Global.logFile.WriteLine(exc.Message);
+                    Global.logFile.WriteLine(null);
+                }
+                // Write CSV
+                try
+                {
+                    Global.DataChangeListToCsv();
+                }
+                catch (Exception exc)
+                {
+                    Global.logFile.WriteLine("Error writing data into CSV file!");
                     Global.logFile.WriteLine(exc.Message);
                     Global.logFile.WriteLine(null);
                 }

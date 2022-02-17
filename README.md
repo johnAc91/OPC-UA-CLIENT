@@ -34,19 +34,13 @@ Instructions
 Improvements and bugs
 	- The .txt files just must be written every X seconds,
 	  to avoid the writting errors due to multiple data received.
-	- The application must not be closed during a reconnection error
-	  (like a bad node subscription).
 
 ---------------------------------------------------------------------------
 ---- OPC UA Client V2 -----------------------------------------------------
 ---------------------------------------------------------------------------
-
-ON GOING
 
 Application type
 	Console App
 
 New funcitonalities
 	- The .txt files just are written periodically.
-	- Classes reorganized by using heritage.
-	- Reconnection modified to avoid unsepcted application closures.

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<config>
+
+<opcuaServer>
+    	<url>opc.tcp://15.83.19.197:4840</url>
+    	<publishingInterval>1000</publishingInterval>
+	<samplingInterval>100</samplingInterval>
+	<maxQueueSize>10</maxQueueSize>
+	<endPointSecurity>false</endPointSecurity>
+</opcuaServer>
+
+<nodes>
+	<node>ns=3;s="WEI109"."status"."analogInput"."processValue"</node>
+	<node>ns=4;i=2030600</node>
+	<node>ns=4;i=2030700</node>
+	<node>ns=4;i=2023800</node>
+	<node>ns=4;i=2025800</node>
+</nodes>
+
+</config>

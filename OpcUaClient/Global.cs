@@ -2,6 +2,7 @@
 using Opc.Ua.Client;
 using Opc.Ua.Configuration;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace OpcUaClient
         public static OpcuaSession opcuaSession;
         public static OpcuaSubscription opcuaSubscription;
         public static NodesSubscription nodesSubscription;
+        public static ArrayList dataChangeList = new ArrayList();
         public static void ConsoleException(string title, string body)
         {
             Console.WriteLine();
@@ -38,6 +40,26 @@ namespace OpcUaClient
             logFile.WriteLine("Press any key to exit ");
             Console.ReadKey();
             Environment.Exit(0);
+        }
+        public static void DataChangeListToCsv()
+        {
+            logFile.WriteLine(DateTime.Now.ToString());
+            if (Global.dataChangeList.Count > 0)
+            {
+                logFile.WriteLine("Writing " + dataChangeList.Count + " elements into CSV file ...");
+                for (int i = 0; i < dataChangeList.Count; i++)
+                {
+                    Global.csvFile.WriteLine(dataChangeList[i].ToString());
+                }
+                Global.dataChangeList.Clear();
+                logFile.WriteLine("Data wrote into CSV!");
+                logFile.WriteLine(null);
+            }
+            else
+            {
+                logFile.WriteLine("No data to be written into CSV!");
+                logFile.WriteLine(null);
+            }
         }
     }
 }

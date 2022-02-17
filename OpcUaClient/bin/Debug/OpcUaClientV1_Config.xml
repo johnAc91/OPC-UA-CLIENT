@@ -3,7 +3,7 @@
 <config>
 
 <opcuaServer>
-    	<url>opc.tcp://15.83.19.197:4840</url>
+    	<url>opc.tcp://15.83.20.58:4840</url>
     	<publishingInterval>1000</publishingInterval>
 	<samplingInterval>100</samplingInterval>
 	<maxQueueSize>10</maxQueueSize>
@@ -11,11 +11,14 @@
 </opcuaServer>
 
 <nodes>
-	<node>ns=3;s="WEI109"."status"."analogInput"."processValue"</node>
-	<node>ns=4;i=2030600</node>
-	<node>ns=4;i=2030700</node>
-	<node>ns=4;i=2023800</node>
-	<node>ns=4;i=2025800</node>
+	<node>ns=3;s="BVA651"."cm"."status"."interlockBypassed"</node>
+	<node>ns=3;s="BVA651"."cm"."status"."simulated"</node>
+	<node>ns=4;i=2033800</node>
+	<node>ns=3;s="BVA807"."cm"."status"."outOfService"</node>
+	<node>ns=3;s="DAS805"."cm"."status"."interlocked"</node>
+	<node>ns=4;i=2033120</node>
+	<node>ns=4;i=2040950</node>
+	<node>ns=4;i=2036400</node>
 </nodes>
 
 </config>
